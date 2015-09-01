@@ -1,0 +1,36 @@
+# Site settings
+title: Jérémy Michel
+email: jeremymichel91@gmail.com
+description: "Jeune développeur, passioné par le web. Je me spécialise dans le développement JavaScript et PHP"
+baseurl: ""
+url: "http://localhost:4000"
+
+# Build settings
+# markdown: kramdown
+permalink: pretty
+
+# Add custom collections
+collections:
+  work:
+    output: true
+
+# Set defaults
+defaults:
+  -
+    scope:
+      path: ""
+      type: "page"
+    values:
+      layout: "default"
+  -
+    scope:
+      path: ""
+      type: "post"
+    values:
+      layout: "post"
+      author: "Stanley Stinson"
+      date: ""
+      title: ""
+      category: ""
+      tags: ""
+

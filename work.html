@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+<!-- +++++ Projects Section +++++ -->
+
+<div class="container pt">
+
+	<div class="row mt">
+		<div class="col-lg-6 col-lg-offset-3 centered">
+			<h3>MES PROJETS</h3>
+			<hr>
+			<p>Mes divers projets de développement</p>
+		</div>
+	</div>
+
+	{% for work in site.work %}
+		{% if work.published == true %}
+			{% cycle 'add rows': '<div class="row mt centered">', nil, nil %}
+
+				<div class="col-lg-4">
+					<a class="zoom green" href="{{ work.url | prepend: site.baseurl }}"><img class="img-responsive" src="{{ work.img }}" alt="" /></a>
+					<p>{{ work.title }}</p>
+				</div>
+
+			{% cycle 'close rows': nil, nil, '</div>' %}
+		{% endif %}
+	{% endfor %}
+	{% cycle 'close rows': nil, '</div>', '</div>' %}
+
+</div><!-- /container -->
